@@ -9,21 +9,26 @@
 							<h1 class="text-white">
 								Marks			
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="cars.html"> Marks</a><span class="lnr lnr-arrow-right"></span> <a href="cars.html"> Add</a></p>
+							<p class="text-white link-nav"><a href="{{route('home')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href=""> Marks</a><span class="lnr lnr-arrow-right"></span> <a href="{{route('showAddMark')}}"> Add</a></p>
 						</div>											
 					</div>
 				</div>
 			</section>
 			<!-- End banner Area -->
-			<div class="col-lg-8 mt-4 container">
-			<form class="form-group "  action="{{route('handleAddMark')}}" method="post"  >
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 mt-4 container">
+						<form class="form-group "  action="{{route('handleAddMark')}}" method="post"  >
 
-				{{ csrf_field() }}
+							{{ csrf_field() }}
 
-				<input class="form-control txt-field" name="name" placeholder="Enter car mark" type="text"><br>
-			
-																	
-				<button  type="submit" class="primary-btn mt-20 text-dark" >Add Mark</button>
-			</form>
+							<input class="form-control txt-field" name="name" placeholder="Enter car mark" type="text"><br>				
+							<button  type="submit" class="primary-btn mt-20 text-dark" >Add Mark</button>
+						</form>
+					</div>
+					<div class="col-lg-6 model-right">
+						<img class="img-fluid" src="{{asset('img/Car-Logos.jpg')}}" alt="brand">
+					</div>
+			</div>
 		</div>
 			@endsection

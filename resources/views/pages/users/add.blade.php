@@ -9,22 +9,31 @@
 							<h1 class="text-white">
 								Users			
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="cars.html"> Users</a><span class="lnr lnr-arrow-right"></span> <a href="cars.html"> Register</a></p>
+							<p class="text-white link-nav"><a href="{{route('home')}}">Home </a>  <span class="lnr lnr-arrow-right"></span> Users<span class="lnr lnr-arrow-right"></span> <a href="{{route('showAddUser')}}"> Register</a></p>
 						</div>											
 					</div>
 				</div>
 			</section>
 			<!-- End banner Area -->
 
-<div class="container">
+	<div class="container">
 	<div class="row d-flex justify-content-center pb-40">
 						<div class="col-md-8 pb-40 header-text">
-							<h1 class="text-center pb-10">Sign up for a Free Account - Carrental</h1>
+							<h1 class="text-center pb-10">Sign up for a Free Account - rentCar</h1>
 							
 						</div>
 					</div>	
-<form class="form-area " id="myForm" action="{{route('handleAddUser')}}" method="post" class="contact-form text-right">
-	{{ csrf_field() }}
+			<form class="form-area " id="myForm" action="{{route('handleAddUser')}}" method="post" class="contact-form text-right">
+							@if ($errors->any())
+   								<div class="alert text-danger">
+       								<ul>
+           						@foreach ($errors->all() as $error)
+              					 <li>{{ $error }}</li>
+          						 @endforeach
+          						</ul>
+          					</div>
+          					@endif
+				{{ csrf_field() }}
 	<div class="row">	
 		<div class="col-lg-6 form-group">
 			<input name="firstName" placeholder="Enter your first name"  class="common-input mb-20 form-control" required="" type="text">

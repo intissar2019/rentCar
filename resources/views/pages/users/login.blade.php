@@ -12,10 +12,16 @@
 							<p class="pt-20 pb-20 text-white">
 								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 							</p>
-							<a href="#" class="primary-btn text-uppercase">Rent Car Now</a>
+							<a href="{{route('home')}}" class="primary-btn text-uppercase">Rent Car Now</a>
 						</div>
-						<div class="col-lg-5  col-md-6 header-right">
-							<h4 class="text-white pb-30">Book Your Car Today!</h4>
+						<div class="col-lg-4  col-md-6 header-right">
+							<h4 class="text-white pb-30">
+								@if(Session::has('msg'))
+ 								<span class="text-danger">{{session('msg')}}</span>
+ 								{{session::forget('msg')}}
+							   @else  Book Your Car Today! 
+							    @endif</h4>
+							
 							<form class="form" role="form" method="post" action="{{route('handleUserLogin')}}">
 								{{ csrf_field() }}
 							  				   

@@ -11,7 +11,7 @@
 							<h1 class="text-white">
 								Cars			
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="cars.html"> Cars</a><span class="lnr lnr-arrow-right"></span> <a href="cars.html"> Add</a></p>
+							<p class="text-white link-nav"><a href="{{route('home')}}">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="{{roue('showCarsList')}}"> Cars</a><span class="lnr lnr-arrow-right"></span> <a href="{{ route('showAddCar') }}"> Add</a></p>
 						</div>											
 					</div>
 				</div>
@@ -22,12 +22,8 @@
 <div class="container m-4 ">
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-12">
-	<form class="form-group " id="myForm" action="{{route('handleAddCar')}}" method="post"  enctype="multipart/form-data">
-	
-				{{ csrf_field() }}
-
-		
-				
+				<form class="form-group " id="myForm" action="{{route('handleAddCar')}}" method="post"  enctype="multipart/form-data">
+	            {{ csrf_field() }}
 				<select class="nice-select"  name="mark">
 					 @foreach($marks as $mark)
 					<option value="{{$mark->id}}">{{$mark->name}}</option>

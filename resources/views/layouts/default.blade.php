@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="{{ app()->getLocale() }}">
 <head>
    @include('includes.head')
 </head>
@@ -14,5 +14,7 @@
        @include('includes.footer')
    </footer>
   @include('includes.footer-scripts')
+   @include('sweet::alert')
+
 </body>
 </html>

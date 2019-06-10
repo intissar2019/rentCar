@@ -22,7 +22,6 @@ class CreateCarsTable extends Migration
             $table->float('mileage');
             $table->float('price');
             $table->enum('transmission',['Automatic','Manual']);
-            $table->enum('status',['notReserved','reserved']);
             $table->string('photo');
 
             $table->integer('mark_id')->unsigned();

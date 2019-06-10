@@ -17,6 +17,8 @@
 		<title>Car Rentals</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
 			
 			<!--
 			CSS
@@ -28,3 +30,5 @@
 			<link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
 			<link rel="stylesheet" href="{{asset('css/bootstrap.css')}}">
 			<link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">

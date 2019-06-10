@@ -10,8 +10,8 @@
 							<h1 class="text-white">
 								Cars			
 							</h1>	
-							<p class="text-white link-nav"><a href="{{route('home')}}">Home</a><span class="lnr lnr-arrow-right"></span><a href="{{route('showCarsList')}}"> Cars</a></p>						
-						</div>
+							<p class="text-white link-nav"><a href="{{route('home')}}"> Home</a><span class="lnr lnr-arrow-right"></span><a href="{{route('showCarsList')}}">Cars</a><span class="lnr lnr-arrow-right"></span>{{$cars->first()->mark->name}}</p>
+						</div>											
 					</div>
 				</div>
 			</section>
@@ -20,20 +20,15 @@
 				<div class="container">
 
 					<div class="row d-flex justify-content-center pb-40">
-						<div class="col-md-12 pb-10 header-text">
-							<h1 class="text-center pb-10">Choose your Desired Car Model</h1>
-						</div>
-						<div class="title justify-content-between d-flex">
-							 @foreach($marks as $mark)
-							 @if($mark->cars->count()> 0 )
-							<a href="{{ route('showCarsByMark',['id'=>$mark->id]) }}" class="btn text-uppercase bg-white text-dark">{{$mark->name}}</a>
-							@endif
-							@endforeach	
-
+						<div class="col-md-8 pb-40 header-text">
+							<h1 class="text-center pb-10">{{$cars->first()->mark->name}}</h1>
+							<p class="text-center">
+								Who are in extremely love with eco friendly system.
+							</p>
 						</div>
 					</div>	
 
-					<div class="row">
+				<div class="row">
 						 @foreach($cars as $car)
 						<div class="col-lg-3 col-md-6 single-blog">
 							<div class="thumb">
@@ -41,17 +36,21 @@
 							</div>
 							<p class="date">{{\Carbon\Carbon::parse($car->created_at)->format('d-m-Y')}}</p>
 							<a href="{{route('home')}}"><h4>{{$car->model}}</h4></a>
-								<p>	
+						
+								
+								<p>
+									
 								{{$car->people}} Person, {{$car->doors}} doors, {{$car->mileage}} km,{{$car->transmission}}
 								</p>
 						
 							<div class="meta-bottom d-flex justify-content-between">
-								<p>{{$car->bookings->count()}} Bookings</p>
-								<p>{{$car->price}} Dolar/day</p>
+								<p><strong>{{$car->price}} Dolar/day</strong></p>
+								<p>{{$car->bookings->count()}} Bookings</p>	
 							</div>
 						</div>
 							@endforeach							
 				
+				</div>													
 				</div>	
 			</section>
 			@endsection
