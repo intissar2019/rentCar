@@ -61,7 +61,8 @@
 							            <button type="submit" class="btn btn-default btn-lg btn-block text-center text-uppercase">Search Booking</button>
 							        </div>
 							    </div>
-							    <p class="text-default">*Each reservation starts 12:00 </p>
+							    <p class="text-default">* Each reservation starts 12:00 </br>* Contact office for a good discount if booking up 2 months 
+							    </p>
 							</form>
 						</div>											
 					</div>

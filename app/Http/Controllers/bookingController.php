@@ -58,8 +58,9 @@ class bookingController extends Controller
         ];
   $messages=[
     'pickUp.required' =>  'Required date of pickUp!',
+    'pickUp.before '  =>  'Booking are open 3 months in advance, according to availability.',
     'dropOff.required'=>  'Required date of dropOff !',
-    'pickUp.before '  =>  'Booking are open 3 months in advance, according to availability.'    
+   
    ];
 
      $validation =Validator::make($data,$rules,$messages);

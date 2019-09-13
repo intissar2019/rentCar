@@ -24,15 +24,7 @@
 						</div>
 					</div>	
 			<form class="form-area " id="myForm" action="{{route('handleAddUser')}}" method="post" class="contact-form text-right">
-							@if ($errors->any())
-   								<div class="alert text-danger">
-       								<ul>
-           						@foreach ($errors->all() as $error)
-              					 <li>{{ $error }}</li>
-          						 @endforeach
-          						</ul>
-          					</div>
-          					@endif
+							
 				{{ csrf_field() }}
 	<div class="row">	
 		<div class="col-lg-6 form-group">
