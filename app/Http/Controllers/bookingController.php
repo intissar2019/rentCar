@@ -53,7 +53,7 @@ class bookingController extends Controller
 	     $data=Input::all();
 
        $rules=[
-        'pickUp'   => 'required|date|date_format:Y-m-d|after_or_equal:today| before:today + 3 months',
+        'pickUp'   => 'required|date|date_format:Y-m-d|after:today| before:today + 3 months',
         'dropOff'  => 'required|date|date_format:Y-m-d|after:pickUp'
         ];
   $messages=[
@@ -128,6 +128,13 @@ public function handleBookingCar($id,$pickUp,$dropOff)
      $bookings=Booking::whereStatus('wait')->orderBy('pickUp')->get();
     
 		 return view('pages.admin.check',['bookings'=>$bookings]);
+  }
+
+   public function showHistoryBooking()
+  {
+     $bookings=Booking::all();
+    
+     return view('pages.admin.history',['bookings'=>$bookings]);
   }
 
 

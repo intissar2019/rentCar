@@ -23,6 +23,7 @@
 				               <li><a href="{{ route('showAddMark') }}">Add brand</a></li>
 				               <li><a href="{{ route('showDeleteCar') }}">Remove a Car</a></li>
 				              <li><a href="{{ route('showCheckBooking') }}">Check Bookings</a></li>
+				              <li><a href="{{ route('showHistoryBooking') }}"> History</a></li>
 				              @else
 				              <li><a href="{{ route('showUpdateUser') }}">Update my account</a></li>
 				              <li><a href="{{ route('showBookingsList') }}">My booking(s)</a></li>

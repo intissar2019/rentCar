@@ -56,6 +56,7 @@ Route::get('/pages/admin/confirm/{id}','bookingController@handleBookingConfirm')
 	  Route::get('/pages/cars/addMark','carController@showAddMark')->name('showAddMark');
 	
   	Route::get('/pages/admin/check', 'bookingController@showCheckBooking')->name('showCheckBooking');	
+    Route::get('/pages/admin/history', 'bookingController@showHistoryBooking')->name('showHistoryBooking'); 
 });
 
 
